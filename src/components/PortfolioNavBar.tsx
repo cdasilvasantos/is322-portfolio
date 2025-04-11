@@ -35,7 +35,7 @@ interface NavBarProps {
 export function PortfolioNavBar({
   logo = {
     url: "/",
-    title: "Chiara daSilva Santos",
+    title: "",
   },
   navItems = [
     { name: "Home", url: "/" },
@@ -77,12 +77,15 @@ export function PortfolioNavBar({
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between">
-          {/* Logo */}
+          {/* Logo with CD initials only */}
           <Link
             href={logo.url}
-            className="text-xl font-bold text-gray-800"
+            className="flex items-center no-underline"
           >
-            {logo.title}
+            <div className="flex items-center justify-center w-10 h-10 rounded-full bg-purple-400 text-white font-bold">
+              CD
+            </div>
+            {logo.title && <span className="ml-2 text-xl font-bold text-gray-800">{logo.title}</span>}
           </Link>
 
           {/* Desktop Navigation */}
@@ -96,9 +99,6 @@ export function PortfolioNavBar({
                 {item.name}
               </Link>
             ))}
-            <Button asChild className="bg-blue-600 hover:bg-blue-700">
-              <Link href={ctaButton.url}>{ctaButton.text}</Link>
-            </Button>
           </nav>
 
           {/* Mobile Navigation */}
@@ -112,8 +112,10 @@ export function PortfolioNavBar({
               </SheetTrigger>
               <SheetContent className="bg-white border-gray-200 text-gray-800">
                 <SheetHeader>
-                  <SheetTitle className="text-gray-800">
-                    {logo.title}
+                  <SheetTitle className="flex items-center text-gray-800">
+                    <div className="flex items-center justify-center w-8 h-8 rounded-full bg-purple-600 text-white font-bold text-sm">
+                      CD
+                    </div>
                   </SheetTitle>
                 </SheetHeader>
                 <div className="mt-8 flex flex-col gap-4">
@@ -127,7 +129,7 @@ export function PortfolioNavBar({
                     </Link>
                   ))}
                   <div className="mt-4 pt-4 border-t border-gray-200">
-                    <Button asChild className="w-full bg-blue-600 hover:bg-blue-700">
+                    <Button asChild className="w-full bg-purple-600 hover:bg-purple-700">
                       <Link href={ctaButton.url}>{ctaButton.text}</Link>
                     </Button>
                   </div>

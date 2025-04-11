@@ -46,7 +46,7 @@ export default function Home() {
         ]}
         logo={{
           url: "/",
-          title: "Chiara daSilva Santos"
+          title: ""
         }}
         ctaButton={{
           text: "Contact Me",
@@ -57,7 +57,7 @@ export default function Home() {
       <CreativeHero
         badge="Web & Information Systems"
         title="Chiara daSilva Santos"
-        subtitle="Web developer and information systems professional with experience in HTML, CSS, Java, Python, and Next.js."
+        subtitle="Web Developer and Information Systems Professional with Experience in HTML, CSS, Java, Python, and Next.js."
         actions={[
           {
             label: "View Projects",
